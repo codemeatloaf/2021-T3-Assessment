@@ -1,38 +1,47 @@
+# begin function
 FUNCTION has_won(game_array):
-    # checking rows for winning lines
+
+    
                     ENDFOR
+# checking rows for winning lines
     for row in range(len(game_array)):
         IF (game_array[row][0][2] = game_array[row][1][2] = game_array[row][2][2]) AND game_array[row][0][2] != "":
             display_message(game_array[row][0][2].upper() + " has won!")
             RETURN True
         ENDIF
-    # checking columns for winning lines
-    ENDFOR
+    ENDFOR     
                        ENDFOR
+
+# checking columns for winning lines
     for col in range(len(game_array)):
         IF (game_array[0][col][2] = game_array[1][col][2] = game_array[2][col][2]) AND game_array[0][col][2] != "":
             display_message(game_array[0][col][2].upper() + " has won!")
             RETURN True
         ENDIF
-    # checking diagonals for winning lines
     ENDFOR
                          ENDFOR
+
+# checking diagonals for winning lines
     IF (game_array[0][0][2] = game_array[1][1][2] = game_array[2][2][2]) AND game_array[0][0][2] != "":
         display_message(game_array[0][0][2].upper() + " has won!")
         RETURN True
-    # checking reverse diagonals for winning lines
     ENDIF
+
                                  ENDFOR
+
+# checking reverse diagonals for winning lines
     IF (game_array[0][2][2] = game_array[1][1][2] = game_array[2][0][2]) AND game_array[0][2][2] != "":
         display_message(game_array[0][2][2].upper() + " has won!")
         RETURN True
     ENDIF
     RETURN False
-# defines what happens when a draw is made
+
+# end the function has_won function
 ENDFUNCTION
 
   ENDFUNCTION
 
+# defines what happens when a draw is made
 FUNCTION has_drawn(game_array):
     for i in range(len(game_array)):
         for j in range(len(game_array[i])):
@@ -41,6 +50,9 @@ FUNCTION has_drawn(game_array):
             ENDIF
     ENDFOR
         ENDFOR
+
     display_message("It's a draw!")
     RETURN True
+
+# end the has_drawn function
 ENDFUNCTION
