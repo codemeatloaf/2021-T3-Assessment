@@ -136,7 +136,7 @@ def render():
     win.fill(WHITE)
     draw_grid()
 
-    # Drawing X's and O's
+    # drawing X's and O's
     for image in images:
         x, y, IMAGE = image
         win.blit(IMAGE, (x - IMAGE.get_width() // 2, y - IMAGE.get_height() // 2))

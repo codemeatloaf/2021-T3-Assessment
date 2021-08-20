@@ -1,7 +1,7 @@
 # begin function
 FUNCTION click(game_array):
 
-# import the things that will be used, such as jpegs
+# define the things that will be used in this function, such as jpegs
 
     global x_turn, o_turn, images
 
@@ -16,7 +16,7 @@ FUNCTION click(game_array):
 
             dis <- math.sqrt((x - m_x) ** 2 + (y - m_y) ** 2)
             
-            # if inside the squares
+            # if inside the squares allow player to put x or o 
             
               ENDIF
             IF dis < WIDTH // ROWS // 2 AND can_play:

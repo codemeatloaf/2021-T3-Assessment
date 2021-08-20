@@ -1,0 +1,32 @@
+# start function 
+FUNCTION main():
+
+    # define things that will be used in function
+    global x_turn, o_turn, images, draw
+    images <- []
+    draw <- False
+    run <- True
+    x_turn <- True
+    o_turn <- False
+    game_array <- initialize_grid()
+    while run:
+        for event in pygame.event.get():
+            IF event.type = pygame.QUIT:
+                pygame.quit()
+            ENDIF
+            IF event.type = pygame.MOUSEBUTTONDOWN:
+                click(game_array)
+            ENDIF
+        ENDFOR
+        render()
+        IF has_won(game_array) OR has_drawn(game_array):
+            run <- False
+        ENDIF
+# end the main function
+ENDFUNCTION
+    ENDWHILE
+
+# while true, update game and keep application open.
+while True:
+    IF __name__ = '__main__':
+        main()
