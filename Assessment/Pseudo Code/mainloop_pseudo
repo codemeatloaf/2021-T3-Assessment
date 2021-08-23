@@ -3,12 +3,15 @@ FUNCTION main():
 
     # define things that will be used in function
     global x_turn, o_turn, images, draw
+
+    # set base true/false statements
     images <- []
     draw <- False
     run <- True
     x_turn <- True
     o_turn <- False
     game_array <- initialize_grid()
+    
     while run:
         for event in pygame.event.get():
             IF event.type = pygame.QUIT:
@@ -22,6 +25,7 @@ FUNCTION main():
         IF has_won(game_array) OR has_drawn(game_array):
             run <- False
         ENDIF
+        
 # end the main function
 ENDFUNCTION
     ENDWHILE
